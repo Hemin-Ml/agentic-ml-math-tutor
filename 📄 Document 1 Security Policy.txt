@@ -1,4 +1,3 @@
-📄 Document 1: Security Policy
 Title: HK Groups Information Security Policy
 Version: 1.0
 Authority Level: High
@@ -39,5 +38,6 @@ Logs retained for 365 days minimum
 
 4. Environment Separation
 Production, staging, and development environments must be isolated
+
 
 Production data must not be copied to non‑production systems
