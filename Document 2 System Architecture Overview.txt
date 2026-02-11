@@ -1,0 +1,52 @@
+ Document 2: System Architecture Overview
+Title: HK Groups Trading Platform – Architecture Overview
+Version: 1.0
+Authority Level: Medium
+
+1. System Description
+HK Groups operates a cloud‑native microservices architecture supporting:
+
+Trade execution
+
+Market analytics
+
+Portfolio tracking
+
+User management
+
+2. Core Components
+2.1 Frontend
+Web application (React)
+
+Mobile applications (iOS / Android)
+
+2.2 Backend Services
+Order Management Service
+
+Market Data Service
+
+Risk & Compliance Service
+
+User Account Service
+
+2.3 Database
+PostgreSQL (primary transactional DB)
+
+Redis (caching & session storage)
+
+3. Data Handling
+Trading orders stored in PostgreSQL
+
+Market data cached in Redis
+
+Staging environment uses masked production‑like datasets
+
+⚠️ Known Deviation:
+For performance testing, unencrypted order snapshots are temporarily stored in staging Redis cache.
+
+4. Deployment
+Hosted on AWS
+
+Kubernetes‑based container orchestration
+
+CI/CD pipeline for releases
