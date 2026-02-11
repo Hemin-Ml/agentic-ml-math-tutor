@@ -1,0 +1,100 @@
+HK Groups Architecture Review Notes
+Meeting Title: Trading Platform Architecture Review
+Date: 2026‑02‑05
+Authority Level: Medium
+Attendees:
+
+CTO
+
+Lead Backend Engineer
+
+Security Engineer
+
+DevOps Lead
+
+Compliance Officer
+
+1. Objective
+Review the current architecture of the HK Groups trading platform to assess scalability, performance, and compliance with security policies.
+
+2. Summary of Current Architecture
+The system uses a microservices architecture deployed on AWS Kubernetes. Core services include Order Management, Market Data Processing, and User Account Management. PostgreSQL is used for transactional storage, and Redis is used for caching and performance optimization.
+
+3. Strengths Identified
+Scalability
+Kubernetes enables horizontal scaling during peak trading hours.
+
+Redis caching significantly reduces database load.
+
+Fault Isolation
+Microservices architecture prevents full system failure if one component crashes.
+
+Deployment Efficiency
+CI/CD pipeline allows rapid deployment and rollback.
+
+4. Key Concerns and Risks
+Encryption Compliance Risk
+Redis cache in staging currently stores unencrypted order snapshots.
+
+This deviates from the security policy requiring encryption of sensitive data at rest.
+
+Security Engineer Comment:
+
+Even though staging uses test data, architecture patterns often propagate to production. This creates future compliance risk.
+
+Access Control Risk
+Redis instances currently allow access from multiple internal services without strict role enforcement.
+
+Compliance Officer Comment:
+
+Access controls must be more strictly defined to align with least privilege requirements.
+
+Monitoring Gaps
+Redis access logs are not fully integrated into centralized logging.
+
+DevOps Comment:
+
+Lack of full audit visibility may slow incident investigation.
+
+5. Tradeoffs Discussed
+Performance vs Security
+Engineering Perspective:
+
+Encryption of Redis cache would increase latency during peak trading hours.
+
+Security Perspective:
+
+Security policy requires encryption regardless of performance cost.
+
+Decision:
+
+Temporary exception allowed for staging only.
+
+6. Disagreements
+Security Team Position:
+
+Encryption should be mandatory in all environments.
+
+Engineering Team Position:
+
+Performance testing requires realistic high‑speed access without encryption overhead.
+
+Final Agreement:
+
+Exception granted temporarily, with expiration and review requirement.
+
+7. Open Questions
+Should Redis encryption be implemented using native Redis encryption or application‑level encryption?
+
+What monitoring improvements are needed to detect unauthorized Redis access?
+
+What is the timeline for achieving full policy compliance?
+
+8. Action Items
+Implement stricter access control policies for Redis
+
+Improve Redis logging integration
+
+Evaluate encrypted Redis performance impact
+
+Review exception status after 60 days
