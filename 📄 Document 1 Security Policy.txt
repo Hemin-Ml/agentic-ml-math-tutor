@@ -1,0 +1,43 @@
+📄 Document 1: Security Policy
+Title: HK Groups Information Security Policy
+Version: 1.0
+Authority Level: High
+
+1. Purpose
+This policy defines security controls to protect HK Groups’ infrastructure, customer data, and trading systems.
+
+2. Data Protection Requirements
+2.1 Encryption
+All customer data must be encrypted at rest using AES‑256
+
+All data in transit must use TLS 1.2 or higher
+
+2.2 Access Control
+Access must follow least privilege principle
+
+Production database access restricted to authorized personnel only
+
+Multi‑factor authentication (MFA) required for admin roles
+
+2.3 Sensitive Data
+Sensitive data includes:
+
+Personally identifiable information (PII)
+
+Financial transaction data
+
+Trading orders and portfolio data
+
+Sensitive data must never be stored in plaintext.
+
+3. Logging & Monitoring
+All authentication events must be logged
+
+Trading order modifications must be auditable
+
+Logs retained for 365 days minimum
+
+4. Environment Separation
+Production, staging, and development environments must be isolated
+
+Production data must not be copied to non‑production systems
