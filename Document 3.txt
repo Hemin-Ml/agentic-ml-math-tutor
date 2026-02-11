@@ -1,0 +1,43 @@
+Title: HK Groups Incident Response Procedure
+Version: 1.0
+Authority Level: High
+
+1. Objective
+Ensure rapid detection, containment, and resolution of security and system incidents.
+
+2. Incident Categories
+Data breach
+
+Unauthorized access
+
+Service outage
+
+Trading system anomaly
+
+3. Response Steps
+3.1 Detection
+Identify incident via monitoring alerts or reports
+
+3.2 Containment
+Isolate affected systems
+
+Disable compromised credentials
+
+3.3 Investigation
+Review logs
+
+Identify root cause
+
+3.4 Resolution
+Patch vulnerabilities
+
+Restore affected services
+
+3.5 Reporting
+Incidents must be reported within 24 hours
+
+Compliance team notified for data‑related incidents
+
+4. Logging Requirements
+All actions taken during incident response must be logged.
+
