@@ -3,7 +3,7 @@ import faiss
 from sentence_transformers import SentenceTransformer
 
 # import chunking pipeline
-DATA_PATH = "C:/Users/Lenovo/Desktop/Agentic AI/Trainig data"
+DATA_PATH = "data/raw"
 import ingestionn
 
 documents = ingestionn.load_documents(DATA_PATH)
@@ -59,5 +59,6 @@ print("Total vectors in index:", index.ntotal)
 # -----------------------------
 
 faiss.write_index(index, "vector_index.faiss")
+
 
 print("Vector index saved!") 
