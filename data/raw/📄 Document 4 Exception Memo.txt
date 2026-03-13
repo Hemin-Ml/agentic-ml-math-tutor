@@ -1,0 +1,28 @@
+📄 Document 4: Exception Memo
+Title: Temporary Security Exception Approval
+From: CTO Office
+Authority Level: High
+
+Subject
+Approval for Temporary Deviation – Staging Data Encryption
+
+Details
+Due to performance constraints during load testing:
+
+Order snapshot data in staging Redis cache may remain unencrypted
+
+Exception valid for 60 days
+
+Applies only to staging environment
+
+No production customer data permitted
+
+Risk Acknowledgment
+The engineering team acknowledges:
+
+Increased exposure risk
+
+Requirement to purge cached snapshots after testing
+
+Expiry
+This exception expires automatically unless formally renewed.
